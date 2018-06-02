@@ -1,0 +1,19 @@
+Descending into ML
+------------------
+* Std Dev = sqrt( sum( (y - mean)**2 ) / N - 1 )
+* Linear model in machine learning: y' = b + w1x1
+    - y' is the predicted label
+    - b is the bias (y intercept), sometimes w0
+    - w1 is the weight of feature 1 (slope)
+    - x1 is a feature (known input)
+* Model with multiple features might be y' = b + w1x1 + ... + wnxn
+* Error is machine learning is "loss"; Algorithm builds a model to
+  minimize loss (called empirical risk minimization)
+* Mean square error (MSE) = avg squared loss per observation
+    1 / N * sum( (y - prediction(x))**2 )
+      - (x, y) is an example, x is feature set & y is label
+      - prediction(x) is a function of the weights / bias
+      - N is the number of examples
+
+Reducing Loss
+-------------
