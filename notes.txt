@@ -37,3 +37,13 @@ Reducing Loss
     - More noisy but faster than batch
 * Mini-Batch Gradient Descent: Average gradient/loss of batch of 10-1000
     - Less noisy than stochastic but still more efficient than using whole dataset
+
+First Steps with TensorFlow
+---------------------------
+* Pandas
+    - DataFrame is a relational data table
+    - Series is a single column
+    - DataFrame from dict of [Column Name]-->[Series]
+    - pandas.read_csv()
+    - DataFrame.describe(), DataFrame.head()
+    - Series.apply(func) to apply complex func to a Series, returning a mask
