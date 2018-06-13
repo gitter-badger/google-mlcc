@@ -17,3 +17,23 @@ Descending into ML
 
 Reducing Loss
 -------------
+* Hyperparams are params that affect machine learning rate
+* Get a "direction" within parameter space
+* Gradient: derivative of the loss function with respect to weights/biases
+    - Tells us which direction to move in order to minimize loss
+    - Think parabola with goal as local minimum
+* Iterative approach:
+    while loss > loss_target:
+        - Data in
+        - Compute gradient
+        - Update model params in direction of negative gradient
+        - Re-compute model
+        - Check the loss w/ new model
+* Small gradient will take forever to reach minimum, large gradient will overshoot
+    the minimum
+* Ideal "learning rate" (hyperparam for gradient step size) is 1 / f(x)'', the
+    inverse of the 2nd deriv of f(x) @ x
+* Stochastic Gradient Descent: Compute the gradient over one random example at a time
+    - More noisy but faster than batch
+* Mini-Batch Gradient Descent: Average gradient/loss of batch of 10-1000
+    - Less noisy than stochastic but still more efficient than using whole dataset
