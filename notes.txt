@@ -47,3 +47,32 @@ First Steps with TensorFlow
     - pandas.read_csv()
     - DataFrame.describe(), DataFrame.head()
     - Series.apply(func) to apply complex func to a Series, returning a mask
+
+Generalization
+--------------
+* If we fit a model on a fixed dataset with 100% accuracy, there is
+    danger of "overfitting", in which loss is low but new observations will be
+    judged inaccurately
+* How do we know if our model is good?
+    - Theoretically: Measure model simplicity / complexity
+    - Intuition: Is the model overly complicated?
+    - Empirically:
+        * Will our model do well on a new set of data?
+        * Evaluation: Test on a new sample (test set); Good performance
+            on the test set is indicator of good performance in general if:
+                - The test set is large enough
+                - We don't cheat by over-using the test set
+            If training set & test set perform similarily, good idea of how
+            general our model is
+* Three basic assumptions:
+    1) We draw observations independently & identically (i.i.d.) at random
+        from the distribution
+    2) The distribution is stationary
+    3) We pull training, validation, test, & other sets from the same distrib
+
+Training & Test Sets
+--------------------
+- Randomize, then split into training, test sets
+- Large training set == better model learning
+- Large test set == more confidence in model
+- Don't ever train on test data: Unrealistically accurate results
