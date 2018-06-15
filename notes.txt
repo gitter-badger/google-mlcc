@@ -76,3 +76,12 @@ Training & Test Sets
 - Large training set == better model learning
 - Large test set == more confidence in model
 - Don't ever train on test data: Unrealistically accurate results
+
+Validation
+----------
+3rd dataset partition: Validation data, so we don't start to overfit to dataset
+Iterative approach:
+    - Train model on training set
+    - Evaluate model on validation set
+    - Tweak model according to validation set results
+With the best model from the validation set, confirm results on test set
