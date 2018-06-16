@@ -1,11 +1,12 @@
 def train_model(
-    learning_rate,
-    steps,
-    batch_sz,
-    training_observations,
-    training_targets,
-    validation_observations,
-    validation_targets):
+        learning_rate,
+        steps,
+        batch_sz,
+        training_observations,
+        training_targets,
+        validation_observations,
+        validation_targets):
+
     """
     :param learning_rate: float, the learning rate
     :param steps: int, the total number of training steps (fwd & bckwd pass over
@@ -43,20 +44,20 @@ def train_model(
     # Input funcs
     training_input_func = lambda: linear_inputfunc(
         training_observations,
-        training_targets,
+        training_targets["median_house_value"],
         batch_sz
     )
 
     predict_training_input_func = lambda: linear_inputfunc(
         training_observations,
-        training_targets,
+        training_targets["median_house_value"],
         shuffle=False,
         num_epochs=1
     )
 
     predict_validation_input_func = lambda: linear_inputfunc(
         validation_observations,
-        validation_targets,
+        validation_targets["median_house_value"],
         shuffle=False,
         num_epochs=1
     )
@@ -66,6 +67,8 @@ def train_model(
     training_rmses = list()
     validation_rmses = list()
 
+    validation_predictions = None
+    training_predictions = None
     for period in range(0, periods):
         # Train the model, beginning with its previous state
         linear_regressor.train(
