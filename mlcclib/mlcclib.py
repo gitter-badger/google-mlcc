@@ -87,3 +87,4 @@ def construct_feature_cols(input_features):
         [tf.feature_column.numeric_column(feat)
             for feat in input_features]
     )
+
